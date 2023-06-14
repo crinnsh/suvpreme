@@ -16,8 +16,8 @@ const Main = () => {
     navigate("/carmod");
     // Event tracking, Button Click, selected car for modification
     gtag("event", "button_click", {
-      event_category: "interacting with car model",
-      event_label: `selected ${car.manufacturer} ${car.model} for further modifications`,
+      event_category: "interactions with car models",
+      event_label: `user selected ${car.manufacturer} ${car.model} for further modifications`,
       value: 1,
     });
   };
