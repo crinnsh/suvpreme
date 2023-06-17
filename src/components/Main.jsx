@@ -20,6 +20,9 @@ const Main = () => {
       event_label: `user selected ${car.manufacturer} ${car.model} for further modifications`,
       value: 1,
     });
+    console.log(
+      `user selected ${car.manufacturer} ${car.model} for further modifications`
+    );
   };
 
   return (
