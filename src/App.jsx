@@ -24,12 +24,14 @@ import {
 } from "./components";
 
 const App = () => {
+  const location = useLocation();
   useEffect(() => {
     ReactGA.send({
       hitType: "pageview",
       page: location.pathname,
       title: "user navigated between pages",
     });
+    console.log(location.pathname);
   }, [location.pathname]);
 
   const [selectedCar, selectCar] = useState(false);
