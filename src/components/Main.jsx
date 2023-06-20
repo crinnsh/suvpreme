@@ -6,6 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 import { Context } from "../App";
 
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-D0MV7Q0YR9");
+
 const Main = () => {
   const [selectedCar, selectCar] = useContext(Context);
 
@@ -15,10 +19,16 @@ const Main = () => {
     selectCar(car);
     navigate("/carmod");
     // Event tracking, Button Click, selected car for modification
-    gtag("event", "button_click", {
-      event_category: "interactions with car models",
-      event_label: `user selected ${car.manufacturer} ${car.model} for further modifications`,
-      value: 1,
+    // gtag("event", "button_click", {
+    //   event_category: "interactions with car models",
+    //   event_label: `user selected ${car.manufacturer} ${car.model} for further modifications`,
+    //   value: 1,
+    // });
+    ReactGA.event({
+      category: "interactions with car models",
+      action: "button_click",
+      label: `user selected ${car.manufacturer} ${car.model} for further modifications`, // optional
+      value: 1, // optional, must be a number
     });
     console.log(
       `user selected ${car.manufacturer} ${car.model} for further modifications`
