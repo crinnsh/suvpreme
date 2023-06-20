@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useLocation,
+  // useLocation,
 } from "react-router-dom";
 
 import ReactGA from "react-ga4";
@@ -24,15 +24,15 @@ import {
 } from "./components";
 
 const App = () => {
-  const location = useLocation();
+  // const location = useLocation();
   useEffect(() => {
     ReactGA.send({
       hitType: "pageview",
-      page: location.pathname,
+      page: window.location.pathname,
       title: "user navigated between pages",
     });
-    console.log(location.pathname);
-  }, [location.pathname]);
+    console.log(window.location.pathname);
+  }, [window.location.pathname]);
 
   const [selectedCar, selectCar] = useState(false);
 
