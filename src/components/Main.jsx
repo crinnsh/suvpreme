@@ -27,8 +27,8 @@ const Main = () => {
     ReactGA.event({
       category: "interactions with car models",
       action: "button_click",
-      label: `user selected ${car.manufacturer} ${car.model} for further modifications`, // optional
-      value: 1, // optional, must be a number
+      label: `user selected ${car.manufacturer} ${car.model} for further modifications`,
+      value: 1,
     });
     console.log(
       `user selected ${car.manufacturer} ${car.model} for further modifications`

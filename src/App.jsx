@@ -1,6 +1,15 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-D0MV7Q0YR9");
 
 export const Context = React.createContext();
 
@@ -15,6 +24,14 @@ import {
 } from "./components";
 
 const App = () => {
+  useEffect(() => {
+    ReactGA.send({
+      hitType: "pageview",
+      page: location.pathname,
+      title: "user navigated between pages",
+    });
+  }, [location.pathname]);
+
   const [selectedCar, selectCar] = useState(false);
 
   return (
