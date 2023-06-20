@@ -14,8 +14,12 @@ const Main = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
-  }, []);
+    ReactGA.send({
+      hitType: "pageview",
+      page: window.location.pathname,
+      title: "User Navigated To Page",
+    });
+  }, [window.location.pathname]);
 
   const chooseCar = (car) => {
     selectCar(car);
