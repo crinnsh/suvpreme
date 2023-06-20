@@ -26,11 +26,7 @@ import {
 const App = () => {
   // const location = useLocation();
   useEffect(() => {
-    ReactGA.send({
-      hitType: "pageview",
-      page: window.location.pathname,
-      title: "user navigated between pages",
-    });
+    ReactGA.pageview(window.location.pathname);
     console.log(window.location.pathname);
   }, [window.location.pathname]);
 

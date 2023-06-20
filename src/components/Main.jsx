@@ -8,8 +8,6 @@ import { Context } from "../App";
 
 import ReactGA from "react-ga4";
 
-ReactGA.initialize("G-D0MV7Q0YR9");
-
 const Main = () => {
   const [selectedCar, selectCar] = useContext(Context);
 
