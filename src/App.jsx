@@ -1,11 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  // useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import ReactGA from "react-ga4";
 
@@ -25,14 +20,14 @@ import {
 
 const App = () => {
   // const location = useLocation();
-  useEffect(() => {
-    ReactGA.send({
-      hitType: "pageview",
-      page: window.location.pathname,
-      title: "User Page Navigation",
-    });
-    console.log(window.location.pathname);
-  }, [window.location.pathname]);
+  // useEffect(() => {
+  //   ReactGA.send({
+  //     hitType: "pageview",
+  //     page: window.location.pathname,
+  //     title: "User Page Navigation",
+  //   });
+  //   console.log(window.location.pathname);
+  // }, [window.location.pathname]);
 
   const [selectedCar, selectCar] = useState(false);
 

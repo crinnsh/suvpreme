@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import { Manufacturers, Cars } from "../data";
 
@@ -12,6 +12,10 @@ const Main = () => {
   const [selectedCar, selectCar] = useContext(Context);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+  }, []);
 
   const chooseCar = (car) => {
     selectCar(car);
