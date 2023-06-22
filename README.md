@@ -1,3 +1,3 @@
 # suvpreme
 
-<type>(test): test<subject>
+<type>test: test<subject>
